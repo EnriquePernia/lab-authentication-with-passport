@@ -24,7 +24,6 @@ mongoose
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
-
 const app = express();
 
 // Middleware Setup
@@ -43,7 +42,7 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(flash());
-require('./passport')(app);
+require('./passport')(app); //Configurado para crear un nuevo passport para casa app
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
